@@ -1,0 +1,25 @@
+App\Entity\Location:
+  properties:
+    city:
+      - NotBlank:
+          groups: ['create', 'edit'],  message: 'City name is required.'
+    country:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 2
+          max: 2
+          groups: ['create', 'edit']
+
+App\Entity\Measurement:
+  properties:
+    date:
+      - NotBlank:
+          groups: ['create', 'edit']
+    celsius:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Range:
+          min: -20
+          max: 40
+          groups: ['create', 'edit']
